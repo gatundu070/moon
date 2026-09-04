@@ -1,0 +1,20 @@
+{
+  "name": "moon-server",
+  "version": "1.0.0",
+  "description": "A realtime tournament application",
+  "license": "ISC",
+  "author": "Gatundu Brian Mwema",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/server.js",
+    "dev": "tsx watch ./src/server.ts",
+    "test": "test"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
