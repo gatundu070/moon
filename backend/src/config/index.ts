@@ -1,1 +1,1 @@
-console.log("cache");
+console.log("config");

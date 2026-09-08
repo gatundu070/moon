@@ -4,17 +4,26 @@
   "description": "A realtime tournament application",
   "license": "ISC",
   "author": "Gatundu Brian Mwema",
-  "type": "commonjs",
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "build": "tsc",
-    "start": "node ./dist/server.js",
-    "dev": "tsx watch ./src/server.ts",
-    "test": "test"
+    "start": "cross-env NODE_ENV=production node ./dist/server.js",
+    "dev": "cross-env NODE_ENV=development tsx watch ./src/server.ts",
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/node": "^26.4.1",
+    "@types/pg": "^8.23.1",
+    "cross-env": "^10.1.0",
     "tsx": "^4.23.13",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "drizzle-orm": "^0.45.2",
+    "pg": "^8.23.0",
+    "zod": "^4.5.4"
   }
 }
