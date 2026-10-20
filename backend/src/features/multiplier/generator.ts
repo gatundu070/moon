@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import round from "lodash/round.js";
 
 export interface ServerSeedPair {
   serverSeed: string;
@@ -60,6 +61,11 @@ export class MultiplierGenerator {
 
     const multiplier = 1 / (1 - normalizedValue);
 
-    return { serverSeed, clientSeed, roundHash, multiplier };
+    return {
+      serverSeed,
+      clientSeed,
+      roundHash,
+      multiplier: round(multiplier, 2),
+    };
   }
 }

@@ -9,10 +9,11 @@
   "scripts": {
     "build": "tsc",
     "start": "cross-env NODE_ENV=production node ./dist/server.js",
-    "dev": "cross-env NODE_ENV=development tsx watch ./src/server.ts",
+    "dev": "cross-env NODE_ENV=development tsx watch --include \"src/**/*.ts\" ./src/server.ts",
     "test": "vitest"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.26",
     "@types/node": "^26.4.1",
     "@types/pg": "^8.23.1",
     "cross-env": "^10.1.0",
@@ -23,6 +24,7 @@
   "dependencies": {
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
+    "lodash": "^4.18.1",
     "pg": "^8.23.0",
     "zod": "^4.5.4"
   }

@@ -153,6 +153,15 @@ describe("MultiplierGenerator", () => {
       }
     });
 
+    it("should return multipliers that have two decimal points", () => {
+      const { serverSeed } = MultiplierGenerator.generateServerSeed();
+      const results = MultiplierGenerator.generateMultiplier(
+        `${SERVER_SEED}_${serverSeed}`,
+        `${CLIENT_SEED}`,
+      );
+      expect(String(results.multiplier)).toMatch(/^-?\d+\.\d{2}$/);
+    });
+
     it("should return the same roundHash and multiplier for the same inputs", () => {
       const resultOne = MultiplierGenerator.generateMultiplier(
         SERVER_SEED,
