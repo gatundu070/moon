@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { MultiplierGenerator } from "./generator.js";
 import crypto from "crypto";
+import { MultiplierGenerator } from "./generator.js";
 
 const SERVER_SEED = "server_seed_test";
 const CLIENT_SEED = "client_seed_test";
